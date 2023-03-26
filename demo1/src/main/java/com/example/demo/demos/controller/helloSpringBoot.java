@@ -16,6 +16,7 @@ public class helloSpringBoot {
     public String test2(){
         System.out.println("hello,springboot2...");
         System.out.println("master....1");
+        System.out.println("master1....1");
         return "hello,springboot2...";
     }
 }
