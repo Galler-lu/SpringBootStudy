@@ -18,6 +18,7 @@ public class helloSpringBoot {
         System.out.println("master....1");
         System.out.println("master1....1");
         System.out.println("push....1");
+        System.out.println("pull....1");
         return "hello,springboot2...";
     }
 }
