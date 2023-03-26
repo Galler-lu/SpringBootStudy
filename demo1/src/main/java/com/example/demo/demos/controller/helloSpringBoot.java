@@ -15,6 +15,7 @@ public class helloSpringBoot {
     @GetMapping("/test2")
     public String test2(){
         System.out.println("hello,springboot2...");
+        System.out.println("master1....1");
         return "hello,springboot2...";
     }
 }
