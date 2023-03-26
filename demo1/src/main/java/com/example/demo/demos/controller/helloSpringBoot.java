@@ -7,9 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/test")
 public class helloSpringBoot {
-    @GetMapping("/")
+    @GetMapping("/test1")
     public String hello(){
         System.out.println("hello,springboot1...");
         return "hello,springboot1...";
+    }
+    @GetMapping("/test2")
+    public String test2(){
+        System.out.println("hello,springboot2...");
+        return "hello,springboot2...";
     }
 }
