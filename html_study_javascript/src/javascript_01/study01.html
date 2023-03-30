@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        // 数组的使用
+        // var arr=[true,1]
+        // alert(arr.length)
+        // arr[2]="galler"
+        // alert(arr.length)
+        // for (let i = 0; i < arr.length; i++) {
+        //     alert(arr[i])
+        // }
+
+        //函数的使用以及函数类型
+        // var fun1=function (sum1, sum2) {
+        //     return sum1+sum2
+        // }
+        // alert(typeof fun1)
+        // alert(fun1(1,2))
+
+        //可变参数arguments的使用（类似于java中的可变数组）,但有一点不同的是arguments是代表传入的全部的参数，将
+        //第一个参数赋值给a
+        // function fun2(a) {
+        //     alert("a="+a)
+        //     alert(arguments.length)
+        //     for (let i = 0; i < arguments.length; i++) {
+        //         alert(arguments[i])
+        //     }
+        // }
+        // fun2(1,2,3,4,5,6,"galler",true)
+
+        //javascript中的对象两种定义方式
+        //方式一
+        // let object = new Object()
+        // object.name="galler"
+        // object.sex=true
+        // object.arr=[1,2,3]
+        // object.fun2=function () {
+        //     alert("对象中的函数")
+        // }
+        // alert("对象中的姓名："+object.name+"/t对象的性别："+object.sex)
+        // object.fun2()
+        //方式二
+       // let object = {
+       //     name:"galler",
+       //     sex:true,
+       //     fun2:function () {
+       //         alert("第二种方式")
+       //     }
+       // }
+       //
+       //  alert("对象中的姓名："+object.name+"/t对象的性别："+object.sex)
+       //  object.fun2()
+
+        //javascript的事件共分为静态注册和动态注册
+        //静态注册：通过 html 标签的事件属性直接赋于事件响应后的代码，这种方式我们叫静态注册。
+        //动态注册：是指先通过 js 代码得到标签的 dom 对象，然后再通过 dom 对象.事件名 = function(){} 这种形式赋于事件
+        // 响应后的代码，叫动态注册。
+
+        //onload事件
+        // //静态注册
+        // function onloadFun() {
+        //     alert("静态注册")
+        // }
+        // //动态注册
+        // window.onload=function () {
+        //     alert("动态注册")
+        // }
+        // //注意对于同一事件若同时存在静态注册和动态注册，只会执行静态注册
+
+        //onclick事件
+
+        //静态注册
+        var fun3=function () {
+            alert("静态注册")
+        }
+
+        //动态注册
+        window.onload=function () {
+            let elementById = document.getElementById("butt2");
+            elementById.onclick=function () {
+                alert("动态注册")
+            }
+        }
+
+
+    </script>
+</head>
+<!--<body onload="onloadFun()">-->
+<body>
+
+<button id="butt1" onclick="fun3()">按钮一</button><br>
+<button id="butt2">按钮二</button>
+
+</body>
+</html>
