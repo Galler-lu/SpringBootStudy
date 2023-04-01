@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
     <script type="text/javascript">
         // 数组的使用
         // var arr=[true,1]
@@ -72,27 +73,43 @@
 
         //onclick事件
 
-        //静态注册
-        var fun3=function () {
-            alert("静态注册")
-        }
+        // //静态注册
+        // var fun3=function () {
+        //     alert("静态注册")
+        // }
+        //
+        // //动态注册
+        // window.onload=function () {
+        //     let elementById = document.getElementById("butt2");
+        //     elementById.onclick=function () {
+        //         alert("动态注册")
+        //     }
+        // }
+        // //document和jquery对象的相互转化
+        // //document对象转化为Jquery对象
+        // alert(typeof $(document.getElementById("butt2")))
+        // //jquery转化为document对象
+        // alert(typeof $(document.getElementById("butt2"))[0])
 
-        //动态注册
-        window.onload=function () {
-            let elementById = document.getElementById("butt2");
-            elementById.onclick=function () {
-                alert("动态注册")
-            }
-        }
+        //jquery相关的选择器请查看jquery文档
 
+        //属性过滤器
+        // alert($("input[name='newsletter']").attr())
+       $(function () {
+           // $("input[name='newsletter']").attr("checked", true)
+           $("input[name]").attr("checked", true)
+       })
 
     </script>
 </head>
 <!--<body onload="onloadFun()">-->
 <body>
 
-<button id="butt1" onclick="fun3()">按钮一</button><br>
-<button id="butt2">按钮二</button>
+<!--<button id="butt1" onclick="fun3()">按钮一</button><br>-->
+<!--<button id="butt2">按钮二</button>-->
+<input type="checkbox" name="newsletter" value="Hot Fuzz"/>篮球
+<input type="checkbox" name="newsletter" value="Cold Fusion"/>足球
+<input type="checkbox" name="accept" value="Evil Plans"/>乒乓球
 
 </body>
 </html>
