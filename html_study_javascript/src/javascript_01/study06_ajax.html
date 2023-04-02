@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+  <script type="text/javascript">
+      $.ajax({
+          method:"get",
+          data:{//此处为一个json对象
+              "username":"galler"
+          },
+          url:"/data/data.txt",
+          dataType:"json",//预期返回的数据类型，如果是json格式，则会自动转换为json对象
+          success:function (data) {
+              console.log(data)
+              //将字符串转化为json对象
+              // let parse = JSON.parse(data);
+              // console.log(parse)
+              let $ui = $("<ui></ui>");
+              for (let i = 0; i < data.length; i++) {
+                  let datum = data[i];
+                  let $li = $("<li>"+datum.username+"</li>");
+                  $ui.append($li)
+
+              }
+              $("body").append($ui)
+          }
+
+      })
+  </script>
+</head>
+<body>
+
+</body>
+</html>

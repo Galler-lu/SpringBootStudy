@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        // html() 它可以设置和获取起始标签和结束标签中的内容。 跟 dom 属性 innerHTML 一样。无参时为获取，有参时为设置
+        // text() 它可以设置和获取起始标签和结束标签中的文本。 跟 dom 属性 innerText 一样。无参时为获取，有参时为设置
+        // val() 它可以设置和获取表单项的 value 属性值。 跟 dom 属性 value 一样。无参时为获取，有参时为设置
+        // 批量操作单选
+        // $(function () {
+        //     // $(":radio").val(["radio2"]);
+        //     // $(":checkbox").val(["checkbox1"])
+        //     // alert($("div").html())
+        //     // alert("text的用法："+$("span").text())
+        //     // $("#butt1").onclick=function () {
+        //     //     alert($("#username").val())
+        //     // }
+        //
+        //     $("#butt1").click(function () {
+        //         alert($("#username").val())
+        //     })
+        // // })
+        // window.onload=function () {
+        //     document.getElementById("butt1").onclick=function () {
+        //         alert($("#username").val())
+        //     }
+        // }
+        // window.onload=function () {
+        //     document.getElementById("butt1").click();
+        // }
+    </script>
+</head>
+<body>
+    <div>我是div标签<span>我是span标签</span></div><br>
+    用户名：<input type="text" name="username" id="username"><button id="butt1">请输入内容</button><br>
+    单选：
+    <input name="radio" type="radio" value="radio1" />radio1
+    <input name="radio" type="radio" value="radio2" />radio2
+    <br/>
+    多选：
+    <input name="checkbox" type="checkbox" value="checkbox1" />checkbox1
+    <input name="checkbox" type="checkbox" value="checkbox2" />checkbox2
+    <input name="checkbox" type="checkbox" value="checkbox3" />checkbox3
+    <br/>
+    下拉多选 ：
+    <select id="multiple" multiple="multiple" size="4">
+        <option value="mul1">mul1</option>
+        <option value="mul2">mul2</option>
+        <option value="mul3">mul3</option>
+        <option value="mul4">mul4</option>
+    </select>
+    <br/>
+    下拉单选 ：
+    <select id="single">
+        <option value="sin1">sin1</option>
+        <option value="sin2">sin2</option>
+        <option value="sin3">sin3</option>
+    </select>
+
+</body>
+</html>

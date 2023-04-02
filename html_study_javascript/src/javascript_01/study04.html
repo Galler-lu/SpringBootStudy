@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        //ready加载事件
+        //预加载事件，当整个document加载完成后执行类似于js中的load事件，ready可以写多个
+        //语法：完整版 $(document).ready(function(){})
+        //简写版：$(function(){})
+        // console.log($("#p1"))
+        // $(document).ready(function () {
+        //     console.log($("#p1"))
+        // })
+        $(function () {
+            console.log($("#p1"))
+        })
+    </script>
+</head>
+<body>
+    <p id="p1">这是p标签</p><br>
+    <input type="checkbox" name="ch" id="aa" checked="checked" aa="aaaaaa">aa
+    <input type="checkbox" name="ch" id="bb">bb
+</body>
+<script type="text/javascript">
+    //测试prop和attr属性的区别
+    //1、获取属性
+    //attr("属性名")
+    //prop("属性名")
+    //2、设置属性
+    //attr("属性名",属性值)
+    //prop("属性名",属性值)
+    //3、移除属性
+    // removeAttr("属性名")
+    //固有属性(元素本身就有的属性，如id、class、name等)
+    //返回值为boolean的属性：checked、selected、disabled
+    //自定义属性 例如aa属性
+    //二者的区别
+    //①如果是固有属性二者皆可获取，如果为自定义属性attr可获取，但prop不可获取
+    //②如果是返回值为boolean:1、如果设置了则attr返回的是具体的值，prop返回的是true或者false，2、如果没设置则attr返回undefined，而prop返回false
+    //③对于设置属性，若是固有属性则attr和prop皆可，若为自定义属性则attr可以而prop不行
+
+    //总结
+    // attr() 可以设置和获取属性的值，不推荐操作 checked、readOnly、selected、disabled 等等
+    // attr 方法还可以操作非标准的属性。比如自定义属性：abc,bbj
+    // prop() 可以设置和获取属性的值,只推荐操作 checked、readOnly、selected、disabled 等等
+    // //获取固有属性
+    // console.log($("#aa").attr("name"))//ch
+    // console.log($("#bb").prop("name"))//ch
+    // //获取返回值为boolean属性
+    // console.log($("#aa").attr("checked"))//checked
+    // console.log($("#aa").prop("checked"))//true
+    //
+    // console.log($("#bb").attr("checked"))//undefined
+    // console.log($("#bb").prop("checked"))//false
+    // //获取自定义属性
+    // console.log($("#aa").attr("aa"))//aaaaaa
+    // console.log($("#aa").prop("aa"))//undefined
+    // //2、设置属性
+    // //固有属性
+    // $("#aa").attr("value",1)//可以
+    // $("#bb").prop("value",1)//可以
+    // //返回值为boolean的属性
+    // $("#aa").attr("checked",true)//可以
+    // $("#bb").prop("checked",true)//可以
+    // //自定义属性
+    // $("#aa").attr("cc",1)//可以
+    // $("#bb").prop("cc",1)//不可以
+
+    //操作元素的样式
+    //attr("class)获取元素的样式名
+    //attr("class","样式名")设置元素的样式，原本的样式会被覆盖
+    //addClass("样式名")添加样式，不会被覆盖，如出现相同的样式则以后定义的为准
+    //css()添加具体的样式
+    //removeClass("样式名")移除样式
+
+
+    //ready加载事件
+    //预加载事件，当整个document加载完成后执行类似于js中的load事件，ready可以写多个
+    //语法：完整版 $(document).ready(function(){})
+    //简写版：$(function(){})
+</script>
+</html>
