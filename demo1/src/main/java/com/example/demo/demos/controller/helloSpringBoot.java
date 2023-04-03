@@ -1,8 +1,6 @@
 package com.example.demo.demos.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/test")
@@ -20,5 +18,11 @@ public class helloSpringBoot {
         System.out.println("push....1");
         System.out.println("pull....1");
         return "hello,springboot2...";
+    }
+    @RequestMapping(value = "/users/{id}",method = RequestMethod.GET)
+    @ResponseBody
+    public String getById(@PathVariable("id") Integer id){
+        System.out.println("users getById==>"+id);
+        return "{'module':'user getByID'}";
     }
 }
