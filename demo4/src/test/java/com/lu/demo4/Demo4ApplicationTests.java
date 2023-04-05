@@ -1,10 +1,10 @@
-package com.java.lu.demo3;
+package com.lu.demo4;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Demo3ApplicationTests {
+class Demo4ApplicationTests {
 
     @Test
     void contextLoads() {

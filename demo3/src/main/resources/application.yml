@@ -1,0 +1,45 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /test1
+
+#数组的写法
+#写法一
+likes:
+  - music
+  - football
+  - basketball
+#写法二
+likes1: [music,football,basketball]
+
+#对象数组写法
+#写法一
+users:
+  - name: zhasng
+    age: 18
+    sex: 男
+  - name: lisi
+    age: 19
+    sex: 女
+#写法二
+users1: {[name:zhasng,age:18,sex:男],[name:lisi,age:19,sex:女]}
+
+#使用${属性名}引用数据
+
+baseDir: /uer/local/test
+center1: ${baseDir}/temp1
+center2: ${baseDir}/temp2
+center3: ${center1}/temp
+#可以使用双引号将整个变量进行解析
+center4: "${baseDir}/temp"
+
+#创建类，用于封装下面数据
+#有Spring帮我们去加载数据到对象中，一定要告诉spring去加载这组信息
+#使用时从spring中直接获取信息使用
+dataSource:
+  driver: com.mysql.jdbc.driver
+  url: jdbc:mysql://localhost/springboot
+  username: root
+  password: 928328
+
+

@@ -1,0 +1,6 @@
+server:
+  port: 82
+spring:
+  main:
+    banner-mode: off
+
