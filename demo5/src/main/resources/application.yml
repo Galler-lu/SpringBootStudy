@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/ssmbuild?serverTimezone=UTC
+      username: root
+      password: 928328
+#设置mp设置,以下设置为关闭mybatis-plus的驼峰转为连字符形式
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
