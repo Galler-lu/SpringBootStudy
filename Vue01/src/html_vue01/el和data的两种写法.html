@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../script/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1>{{hello}}</h1>
+    </div>
+<script type="text/javascript">
+    // 总结
+    // data有两种写法
+    //第一种写法：对象式
+    //第二种写法：函数式，当使用组件时必须使用函数式否则报错
+    //el的两种写法：①new Vue()实例时直接配置el属性。②先创建Vue实例，然后通过$mount指定el（也就是挂载上去）
+
+
+
+    // new Vue({
+    //     // el的第一种写法
+    //     el:"#root",
+    //     //data的第一种写法：对象式
+    //     data:{
+    //         hello: "你好"
+    //     }
+    // })
+    // let vue = new Vue({
+    //     //data的第二种写法：函数式
+    //     data:function () {
+    //         return{
+    //
+    //         }
+    //
+    //     }
+    // });
+    // //el的第二种写法
+    // vue.$mount("#root")
+
+</script>
+</body>
+</html>

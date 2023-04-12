@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript" src="../script/vue.js"></script>
+</head>
+<body>
+
+
+<div id="root">
+    <h1>{{hello}}</h1>
+<!--    v-bind动态绑定属性-->
+    <a v-bind:href="url">点我去{{school.name}}百度学习</a>
+<!--    <a :href="url">点击我去百度学习</a>//动态绑定属性的简写-->
+<!--    Vue模板语法有两大类
+            1、插值语法：
+                功能：用于解析标签体内容
+                写法：{{xxxx}},xxxx时js表达式，且可以直接读取到data中的所有属性（只能直接读取第一层）
+           2、指令语法
+                功能：用于解析标签（包括：标签属性，标签体内容，绑定事件....）
+                举例：v-bind:href="xxx"或简写为:href="xxx",xxx同样要写为js表达式，且可以直接读取到data中的所有属性。
+-->
+
+
+</div>
+<script type="text/javascript">
+    Vue.config.productionTip=false//阻止vue提示的产生
+    new Vue({
+        el:'#root',
+        data:{
+            hello:"你好",
+            url:"http://www.baidu.com",
+            school:{
+                name:"学校名称"
+            }
+        }
+    });
+</script>
+</body>
+</html>

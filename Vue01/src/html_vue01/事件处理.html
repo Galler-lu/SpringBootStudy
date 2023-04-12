@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript" src="../script/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <a>{{hello}}</a>
+<!--    v-on的第一种写法-->
+    <button v-on:click="show1">按钮一</button><br>
+<!--    v-on的第二种写法-->
+    <button @click="show2($event,666)">按钮二</button>
+<!--    总结
+        ①使用v-on:xxx或者简写形式@xxx 绑定事件，其中xxx是事件名
+        ②事件的回调需要配置在methods中，但最终和data中配置的一样出现vm上
+        ③methods中配置的函数不要用箭头函数，否则this就不是vm了
+        ④methods中配置的函数，都是被Vue所管理的函数，this的指向是vm 或 组件实例对象；
+        ⑤@click和@click($event)效果一致，但后者可以传参
+
+-->
+</div>
+<script type="text/javascript">
+
+    new Vue({
+        el:"#root",
+        data(){
+            return{
+                hello: "你好啊"
+            }
+        },
+        methods:{
+            show1(event){
+                alert("点击了按钮一")
+            },
+            show2:function (event,number) {
+                console.log(event,number)
+                alert("点击了按钮二")
+            }
+        }
+    })
+</script>
+</body>
+</html>
