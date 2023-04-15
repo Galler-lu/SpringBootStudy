@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript" src="/script/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <!--
+        监视属性watch：
+            1.当被监视的属性变化时, 回调函数自动调用, 进行相关操作
+            2.监视的属性必须存在，才能进行监视！！
+            3.监视的两种写法：
+                    (1).new Vue时传入watch配置
+                    (2).通过vm.$watch监视
+ -->
+    <!-- 准备好一个容器-->
+    <span>今天天气很{{info}}</span><br>
+    <button @click="change">点击切换</button>
+</div>
+<script type="text/javascript">
+    new Vue({
+        data(){
+            return{
+                isTrue:true
+            }
+        },
+        methods:{
+            change(){
+                this.isTrue=!this.isTrue
+            }
+        },
+        watch:{
+            // info:{
+            //     immediate:true, //初始化时让handler调用一下
+            //     handler(newValue,oldValue){
+            //         //当被监视的属性被修改时会被调用
+            //         console.log('isTrue被修改了',newValue,oldValue)
+            //     }
+            // }
+            //当只有handler时可以简写成如下格式
+            info(newValue,oldValue) {
+
+                console.log("监视计算属性info",newValue,oldValue)
+            },
+            // isTrue(newValue,oldValue){
+            //     console.log("普通属性isTrue：",newValue,oldValue)
+            // }
+        },
+        computed:{
+            info() {
+                return this.isTrue?"炎热":"寒冷"
+            }
+        }
+    }).$mount("#app")
+</script>
+</body>
+</html>

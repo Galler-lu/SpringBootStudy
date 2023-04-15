@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/script/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <span>今天天气很{{info}}</span><br>
+    <button v-on:click="changeIsHot()">点击切换</button>
+</div>
+<script type="text/javascript">
+    new Vue({
+        el:"#app",
+        data(){
+            return{
+                isHot:true
+            }
+        },
+        computed:{
+            info(){
+                return this.isHot?"炎热":"寒冷"
+            }
+        },
+        methods:{
+            changeIsHot(){
+                this.isHot=!this.isHot
+            }
+        }
+    })
+</script>
+</body>
+</html>
