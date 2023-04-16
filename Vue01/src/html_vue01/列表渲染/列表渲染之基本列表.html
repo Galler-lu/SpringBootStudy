@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/script/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--
+        v-for指令:
+                1.用于展示列表数据
+                2.语法：v-for="(item, index) in xxx" :key="yyy"
+                3.可遍历：数组、对象、字符串（用的很少）、指定次数（用的很少）
+-->
+        <span>遍历数组</span><br>
+        <ul>
+            <li v-for="(p,key) in persons" :key="key">
+                {{p.name}}--{{p.age}}--{{key}}
+            </li>
+        </ul>
+        <hr>
+        <span>遍历对象</span>
+        <ul>
+            <li v-for="(a,b) in person">
+                {{a}}--{{b}}
+            </li>
+        </ul>
+        <hr>
+        <span>遍历字符串</span>
+        <ul>
+            <li v-for="(a,b) in str">
+                {{b}}--{{a}}
+            </li>
+        </ul>
+        <hr>
+        <span>遍历字指定次数</span>
+        <ul>
+            <li v-for="(a,b) in 5">
+                {{b}}--{{a}}
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el:"#app",
+            data(){
+                return{
+                    persons:[
+                        {
+                            "id":1001,
+                            "name":"lu",
+                            "age":25
+                        },
+                        {
+                            "id":1002,
+                            "name":"wen",
+                            "age":26
+                        },
+                        {
+                            "id":1003,
+                            "name":"hui",
+                            "age":27
+                        }
+                    ],
+                    person:{
+                        "id":1004,
+                        "name":"chao",
+                        "age":28
+                    },
+                    str:"qwertyuiop",
+                }
+            },
+        })
+    </script>
+</body>
+</html>
