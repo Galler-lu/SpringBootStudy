@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>demo6</artifactId>
+    <artifactId>demo8</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo6</name>
-    <description>demo6</description>
+    <name>demo8</name>
+    <description>demo8</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,15 +19,22 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.mysql</groupId>-->
+<!--            <artifactId>mysql-connector-j</artifactId>-->
+<!--            <scope>runtime</scope>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+<!--         https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.30</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -58,7 +65,11 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <!--                <configuration>-->
+    <!--                    <mainClass>lu.Demo8Application</mainClass>-->
+    <!--                    <fork>true</fork>-->
+    <!--                    <includeSystemScope>true</includeSystemScope>-->
+    <!--                </configuration>-->
     <build>
         <plugins>
             <plugin>
@@ -75,8 +86,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
+
                 <configuration>
-                    <mainClass>com.example.demo.Demo6Application</mainClass>
+                    <mainClass>lu.Demo8Application</mainClass>
 <!--                    <skip>true</skip>-->
                 </configuration>
                 <executions>
