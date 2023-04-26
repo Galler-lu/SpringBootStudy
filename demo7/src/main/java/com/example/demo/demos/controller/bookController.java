@@ -1,5 +1,6 @@
 package com.example.demo.demos.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.demo.demos.domain.book;
 import com.example.demo.demos.service.bookService;
 import com.example.demo.demos.utils.R;
@@ -27,8 +28,8 @@ public class bookController {
     }
     @GetMapping("/{current}/{size}")
     public R getPage(@PathVariable("current") Integer current,@PathVariable("size") Integer size){
-        List<book> books = bookService.selectPage(current, size);
-        return new R(true,books);
+        Page<book> bookPage = bookService.selectPage(current, size);
+        return new R(true,bookPage);
     }
     //修改数据
     @PutMapping
