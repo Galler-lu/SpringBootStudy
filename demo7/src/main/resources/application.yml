@@ -4,10 +4,10 @@ spring:
   datasource:
     druid:
 #      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/smbsm?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+      url: jdbc:mysql://localhost:3306/smbsm?serverTimezone=UTC
       username: root
       password: 928328
-      driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-name: com.mysql.jdbc.Driver
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
