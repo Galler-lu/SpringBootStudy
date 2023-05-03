@@ -1,0 +1,6 @@
+servlets:
+  ipAddress: 1.1.1.1
+  port: 8080
+  timeout: -1
+  time: 240
+  dataSize: 10
